@@ -16,7 +16,6 @@ function searchCountries() {
 function showCountriesList(resp) {
     countriesList.empty();
     resp.forEach(function(item) {
-       $('<li>').text(item.name).appendTo(countriesList);
-});
+        $('<li>').text(item.name + ' (native name: ' + item.nativeName + '), capital: ' + item.capital + ', region: ' + item.region + ', currency: ' + item.currencies[0].name + ' (' + item.currencies[0].code + ')' + ', language: ' + item.languages[0].name).appendTo(countriesList);
     });
 }
